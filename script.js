@@ -17,7 +17,27 @@ grades.push(99)
 for(let i = 0; i<grades.length;i++){
   all_grades_div.innerHTML += `<span> #${i}: ${grades[i]} </span>`;
 }
+//Part 2 ==============================================
 function search() {
   let inputValue = document.getElementById("input").value;
-  
+  //1.
+  let searchGrade = grades.filter((grade) => grade == inputValue);
+  if(searchGrade.length == 0)
+  search_grades_div.innerHTML = `<span>No grade found</span>`
+  searchGrade.forEach((grade) => {
+    search_grades_div.innerHTML = `<span> ${grade} </span>` ;
+    });
 }
+
+//2.
+let aGrades = grades.filter((grade) => grade >= 90);
+aGrades.forEach((grade) => {
+A_grades_div.innerHTML += `<span> ${grade} </span>`;
+});
+//4.
+let BounsGrades = grades.map((grade) => grade +3);
+//5.
+BounsGrades.forEach((grade,index) => {
+bonus_grades_div.innerHTML += `<span> #${index}: ${grade} </span>`;
+});
+
