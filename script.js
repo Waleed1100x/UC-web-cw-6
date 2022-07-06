@@ -40,4 +40,7 @@ let BounsGrades = grades.map((grade) => grade +3);
 BounsGrades.forEach((grade,index) => {
 bonus_grades_div.innerHTML += `<span> #${index}: ${grade} </span>`;
 });
+//Part 3  ==============================================
+let randomindex = Math.floor(Math.random()*grades.length);
+  random_grade_div.innerHTML = `<span> #${randomindex}: ${grades[randomindex]} </span>`
 
